@@ -37,6 +37,17 @@ Talk to it:
 - "When is the paper due? What does the rubric want?"
 - "What's on my calendar today?" / "Check my email." (needs the optional setup)
 
+Or call one directly with a slash command (type `/` and it autocompletes):
+
+- `/amelia-student:week-look` — your ranked week
+- `/amelia-student:study-coach` — coach me through something
+- `/amelia-student:course-capture` — pull a syllabus into your courses
+- `/amelia-student:course-grounded-answer` — answer from your course materials
+- `/amelia-student:calendar` — your Google Calendar
+- `/amelia-student:email` — your Gmail
+
+You can add what you want right after it, for example `/amelia-student:calendar what's on today`.
+
 ## 3. Update
 
 ```
