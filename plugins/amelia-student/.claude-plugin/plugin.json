@@ -1,0 +1,17 @@
+{
+  "name": "amelia-student",
+  "description": "A study assistant a college student owns: a fast weekly planning loop plus a coaching mode that helps her understand her coursework instead of producing work she would submit for a grade.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Chris Weber"
+  },
+  "agents": [
+    "agents/amelia-coach.md"
+  ],
+  "skills": [
+    "skills/course-capture",
+    "skills/week-look",
+    "skills/course-grounded-answer",
+    "skills/study-coach"
+  ]
+}

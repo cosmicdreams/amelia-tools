@@ -1,0 +1,21 @@
+# This repository contains plugin code only — never a student's personal data.
+# A student's course materials, review ledger, weekly plans, notes, and any
+# authentication tokens live in a data root she controls, outside this repository.
+
+course-vault/
+Course-Vault/
+data-root/
+student-data/
+*.local.md
+
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+*.token
+*.secret
+.env
+.env.*
+credentials.json
