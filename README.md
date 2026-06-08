@@ -56,4 +56,4 @@ You can add what you want right after it, for example `/amelia-student:calendar 
 
 ## This grows with you
 
-This is just the start. If something would make your school life easier — a new skill, a different way of working, anything — you do not have to figure out how to build it. Just know what you want, tell your dad, and we will build it.
+This is just the start. If something would make your school life easier — a new skill, a different way of working, anything — you do not have to know how to build it. You just have to know what you want. Ask, and it gets built.
