@@ -1,6 +1,6 @@
 ---
 name: course-grounded-answer
-description: Use when Amelia asks a question about a specific course and wants the answer grounded in her own syllabus, rubric, assignment prompt, readings, or notes rather than general knowledge — for course logistics and expectations, not for answering graded questions.
+description: "Use when Amelia asks how a specific course works and wants the answer pulled from her own materials — questions like 'when is the paper due', 'what does the rubric want', 'is late work accepted', 'how many absences are allowed', 'what should this assignment include'. Answers course logistics, policies, and expectations using only her syllabus, rubric, assignment prompts, readings, or notes, with a citation for every fact or a plain statement that the materials do not say. Do not use this to learn or explain course content, to study, or to answer the questions a course is actually grading — use the study-coach skill for understanding concepts and quizzing."
 ---
 
 # Course-Grounded Answer

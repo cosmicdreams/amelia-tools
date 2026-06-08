@@ -1,6 +1,6 @@
 ---
 name: week-look
-description: "Use when Amelia asks what is due, what to do this week, what to start first, or what her week looks like — a short ranked plan from her course deadlines and review ledger."
+description: "Use when Amelia wants her coursework prioritized — what is due, what to work on this week, what to start first, or what her week looks like in terms of assignments and studying. Produces a short ranked plan from her course deadlines and review ledger. This is about ranking and planning effort, not about scheduled events: for what is on her calendar, whether she is free, or her class times, use the calendar skill instead."
 ---
 
 # Week Look

@@ -45,14 +45,14 @@ The separation does not rest on a single safeguard:
 
 ---
 
-## 3. Read-only by default, and no external writes exist in Version One
+## 3. Read by default; any change to the outside world needs your confirmation
 
-The assistant's normal posture is to read, not to change. It reads only the material you hand it, and in this first version it does not write anything outside your own private study files.
+The assistant's normal posture is to read, not to change. Reading is free; changing anything in the outside world always asks you first.
 
-- **It reads what you give it.** When you drop in a syllabus, a photograph of one, an assignment sheet, a rubric, a reading, or a note, the assistant reads that material so it can help you. It does not go looking for anything you did not hand it.
-- **The only things it writes are yours and private.** The only writing the assistant does is to your own course memory, your notes, and your review ledger, all inside your data root. These are your private model of your own coursework. They are written for you to use, not for anyone to inspect.
-- **There are no external writes in Version One. None.** The assistant in this version cannot send electronic mail, cannot edit a calendar, cannot submit anything to your school, cannot post anywhere, and cannot save a finished assignment. These capabilities are not merely turned off; they are not present.
-- **Any external write would require your explicit confirmation, one at a time, forever.** If a future version ever gains the ability to write somewhere outside your private study files, that ability is gated behind your explicit confirmation, approved by you one action at a time. There is no setting that grants blanket permission, and there is never an automatic write you did not approve. This rule does not expire when later versions arrive.
+- **It reads what you give it, and what you connect.** When you drop in a syllabus, a photograph of one, an assignment sheet, a rubric, a reading, or a note, the assistant reads that material. If you choose to connect Google Workspace (see section 9), it can also read your calendar and your mail. Reading your own information never needs a confirmation step.
+- **The study files it writes are yours and private.** The assistant's own record-keeping — your course memory, your notes, and your review ledger — is written only inside your data root. These are your private model of your own coursework, written for you to use, not for anyone to inspect.
+- **Every change to the outside world is confirmed, one action at a time.** Sending an email, creating or changing a calendar event, or any other action that affects something outside your private study files is a write, and the assistant always shows you exactly what it is about to do and waits for your yes before doing it. There is no setting that grants blanket approval, and there is never an automatic outside write you did not see and approve. This rule does not expire.
+- **The real limit is what you grant.** The assistant can be capable — it can read and write through Google Workspace — on purpose, so that the boundary lives where it belongs: in the permissions you grant Google when you connect, and in the confirmations you give in the moment. If you grant read-only permission, nothing can write, no matter what is typed. You set the ceiling; the assistant lives under it.
 
 ---
 
@@ -63,6 +63,8 @@ The coaching agent, named amelia-coach, is the enforceable core of the learning 
 - **It can read, search, list, and call the four focused skills.** That is the complete list. It can read your course files, search through them, list what is there, and route into course-capture, week-look, course-grounded-answer, and study-coach.
 - **It cannot do anything else.** It has no general write tool, no command-line access, and no web access. This is why the boundary against producing submittable work is a mechanism and not just an instruction: with no way to save a finished file, the agent physically cannot generate and hand you a completed assignment, even if you asked it to and it forgot every other rule. The capability simply is not there.
 - **The one thing it may write is your review ledger and notes.** When you test yourself, the agent records what you got right and wrong, and when each concept is due to come back, in your review ledger inside your data root. That ledger is your honest private picture of what you know. It is yours to read, yours to edit, and yours to delete. It is never sent anywhere.
+
+The calendar and email skills are deliberately **not** part of this coaching agent. They are separate, everyday-assistant skills that run in an ordinary session with the tools they need to reach Google Workspace, and they can write — send a message, add an event — always with your confirmation, as section 3 describes. Keeping them outside the coaching agent is intentional: the coaching agent stays deliberately powerless to act in the outside world, so the academic-integrity boundary it enforces can never be quietly turned into "send my professor this finished essay." Coaching reads and thinks; the utility skills act, and only with your yes.
 
 ---
 
@@ -113,15 +115,17 @@ The system's only real job is to make the honest path the easiest path. It tries
 
 ---
 
-## 9. Later phases, only if you choose them
+## 9. Connecting Google Workspace, only if you choose it
 
-Everything below applies only if you ever decide to connect an outside account, which is well past this first version and never happens without you choosing it. It is written here now so that the rules are set before any account is ever in the picture, not negotiated under pressure later.
+Connecting your Google Calendar and your Gmail is optional and entirely your choice. Nothing here happens until you run the authentication step yourself. The rules below are set down now, before any account is connected, so they are not negotiated under pressure later. When you do connect, the `calendar` and `email` skills can read and — with your confirmation each time — write.
 
-- **An honest scope statement, not a comforting fiction.** A read-only mail permission grants access to your *entire* mailbox. "Just school email" is a filter the application applies after the fact, not a boundary the mail provider enforces. You will be told this plainly. The preferred path avoids a full mailbox grant entirely, using a forwarding address, a calendar feed file, or exported notification messages instead of holding a token that can read your whole inbox.
+- **You set the ceiling when you authenticate.** When you connect, Google asks you to approve specific permissions: reading your calendar, changing your calendar, reading your mail, sending mail. The assistant can only ever do what you approved. Grant read-and-write for both if you want the full value of the skills; grant less if you prefer, and the assistant will simply be unable to do the rest and will say so. You can change or withdraw any of this later. This permission set, enforced by Google itself, is the real boundary — stronger than anything this plugin could promise.
+- **An honest scope statement, not a comforting fiction.** A permission to read mail grants access to your *entire* mailbox, and a permission to send can send as you; "just school email" is a filter applied after the fact, not a wall the mail provider enforces. You are told this plainly so you can decide with your eyes open. The trade is yours to make: broader access buys more usefulness, and you are the one who weighs that.
+- **Every change is still confirmed, one at a time.** Even with write permission granted, the assistant shows you each message before it sends and each event before it creates, and waits for your yes. Permission makes an action possible; your confirmation makes it happen.
 - **Tokens live only where you can reach them.** Any access token lives in your keychain or in a path only you can read, never in a file your father can open.
-- **Snapshots expire on their own.** Any copy the system makes of outside material is written to your data root with a short time-to-live, so stale copies of your inbox or calendar do not pile up on disk.
-- **You can revoke access instantly, by yourself.** You can cut off any connected account on your own, without your father, at the provider's permission page. Revoking there kills the token, and any already-downloaded copies are purged automatically by the time-to-live described above.
-- **You can audit your own assistant.** An access log, readable by you, records which materials each skill read and when, so that you, the owner, can audit your own assistant's access. This log is yours. It is never shown to your school or your father.
+- **Copies expire on their own.** Any copy the assistant makes of your calendar or mail is written to your data root with a short lifetime, so stale copies do not pile up on disk.
+- **You can revoke access instantly, by yourself.** You can cut off the connection on your own, without your father, from your Google Account permissions page. Revoking there immediately kills the token, and any already-downloaded copies expire on their own as described above.
+- **You can audit your own assistant.** An access log, readable by you, records which information each skill read and what it sent or changed, and when — so that you, the owner, can audit your own assistant. This log is yours. It is never shown to your school or your father.
 
 ---
 
