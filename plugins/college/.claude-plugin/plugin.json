@@ -1,0 +1,21 @@
+{
+  "name": "college",
+  "description": "A study assistant a college student owns: a fast weekly planning loop, a coaching mode that helps her understand her coursework instead of producing work she would submit, and read-and-write access to her Google Calendar and Gmail with confirmation before any change.",
+  "version": "0.3.0",
+  "author": {
+    "name": "Chris Weber"
+  },
+  "agents": [
+    "agents/coach.md"
+  ],
+  "skills": [
+    "skills/capture-course",
+    "skills/plan-week",
+    "skills/check-syllabus",
+    "skills/coach-me",
+    "skills/manage-calendar",
+    "skills/manage-email",
+    "skills/make-study-aids",
+    "skills/quiz-me"
+  ]
+}
