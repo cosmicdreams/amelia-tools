@@ -77,13 +77,13 @@ notebooklm ask "What does the rubric say the lab report needs?"
 
 ## Download what it made (confirm first — this writes files)
 
-Save anything to her own data root, never into this repository:
+Save into Amelia's own data root — the directory she alone controls, read from the environment variable `AMELIA_DATA_ROOT`. If that variable is not set, do not guess a path and do not write into this plugin or any nearby repository: tell her in one short sentence that her data root is not set yet, and stop. Never write a generated file into the current working directory, which may be a code checkout the builder can read.
 
 ```bash
-notebooklm download report ./study-guide.md
-notebooklm download audio ./overview.mp3
-notebooklm download quiz --format markdown ./quiz.md
-notebooklm download flashcards --format markdown ./flashcards.md
+notebooklm download report "$AMELIA_DATA_ROOT/Biology-101/study-guide.md"
+notebooklm download audio "$AMELIA_DATA_ROOT/Biology-101/overview.mp3"
+notebooklm download quiz --format markdown "$AMELIA_DATA_ROOT/Biology-101/quiz.md"
+notebooklm download flashcards --format markdown "$AMELIA_DATA_ROOT/Biology-101/flashcards.md"
 ```
 
 ## What runs automatically versus what to confirm

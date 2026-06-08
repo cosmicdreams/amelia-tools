@@ -1,6 +1,6 @@
 # Working With Google Workspace From The Command Line
 
-This reference explains how the assistant talks to Google Workspace — Amelia's Google Calendar and her Gmail — through a command-line tool whose command name is `gws` (short for Google Workspace). It is shared by the `calendar` and `email` skills.
+This reference explains how the assistant talks to Google Workspace — Amelia's Google Calendar and her Gmail — through a command-line tool whose command name is `gws` (short for Google Workspace). It is shared by the `manage-calendar` and `manage-email` skills.
 
 Read this together with the [consent model](consent-model.md). The consent model is the rule book; this file is the how-to. Where the two ever seem to disagree, the consent model wins.
 
