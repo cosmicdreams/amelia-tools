@@ -56,6 +56,29 @@ Two related ways to get the same posture:
 
 A plain caveat, worth saying out loud: the tutor output style holds the coaching posture by instruction, not by force. In a normal session with full tools she can still ask for a direct answer and get one. The hard, tool-enforced boundary holds only inside the amelia-coach agent. This is intentional. Coaching mode is a mode she chooses for herself when she actually wants to learn — not a cage, and not something anyone else can force her into.
 
+## Connect Google Workspace (calendar and email), if she wants it
+
+This step is optional and entirely hers. Once connected, the **calendar** and **email** skills can read her Google Calendar and Gmail and — with her confirmation each time — write: add an event, send a message. The boundary is set by the permissions she grants Google, not by an artificially limited tool.
+
+1. **Install the Google Workspace command-line tool.** Its command name is `gws`. In a terminal:
+
+   ```
+   npm install -g @googleworkspace/cli
+   ```
+
+2. **Authenticate and choose permissions.** The first time:
+
+   ```
+   gws auth setup   # creates a Google Cloud project and turns on the needed services
+   gws auth login   # signs in
+   ```
+
+   During setup Google asks her to approve permissions. To get the full value of the skills, she grants read-and-write for both Google Calendar and Gmail. She can grant less; the assistant will simply be unable to do the rest and will say so plainly.
+
+3. **Use it.** She can now say things like "what's on my calendar today", "am I free Thursday afternoon", "block two hours to study", "check my email", or "draft a reply to my professor". Reading never asks first; sending a message or creating an event always shows her the exact details and waits for her yes — there is no silent write and no undo on a sent message.
+
+An honest note worth saying plainly: a permission to read mail covers her *whole* mailbox, and a permission to send can send as her. "Just school email" is a filter applied afterward, not a wall the provider enforces. That trade is hers to make with her eyes open, and she can change or withdraw any permission at any time from her Google Account permissions page, which immediately revokes access.
+
 ## Updates
 
 When a new version of the plugin is published, she updates the marketplace from inside Claude Code:
@@ -88,15 +111,19 @@ Version One is deliberately small — about a dozen files, installable in an aft
 
 - **One coaching agent — amelia-coach.** The enforceable core of the coaching posture, with a restricted tool set so it cannot produce and save submittable work.
 - **One everyday output style — tutor.** Reshapes a whole Claude Code session into coaching posture.
-- **Four skills:**
+- **Six skills:**
   - **course-capture** — silently turns a pasted or photographed syllabus, assignment sheet, or rubric into internal course memory (deadlines, weights, requirements, what the professor expects), keeping track of where each fact came from. She never has to look at the files it makes.
   - **week-look** — the Sunday-evening ritual. She asks "What does my week look like?" and gets a short, ranked answer: the few things that matter this week, the one to start first and why, and any concepts due for review.
   - **course-grounded-answer** — answers questions about how a course works (policies, deadlines, what a rubric asks for), grounded in her own materials, with citations or an honest "the material does not say." Questions about the substance being graded are routed to coaching rather than answered.
   - **study-coach** — one skill with three modes: coached understanding (the hint ladder), self-testing (predict, reveal, compare, and record on a spaced-review schedule), and office-hours preparation (refining questions she drafts).
+  - **calendar** — reads her Google Calendar and, with her confirmation, adds or changes events. Needs the optional Google Workspace connection above.
+  - **email** — reads her Gmail and, with her confirmation, sends or replies. Needs the optional Google Workspace connection above.
 - **One shared consent document and the coaching contract**, written once and used everywhere so the privacy and integrity rules never drift between surfaces.
 - **Two demonstration fixtures** — a fake syllabus and a fake assignment — so the whole thing can be built and tested with no real course data.
 
-**Deliberately deferred to later phases:** connections to Google Workspace (calendar, mail, drive) and to a college Learning Management System (the school's online course platform). These depend on fragile account connections and access rules, and Version One is designed to prove its value with nothing but the material she already has. They come only later, only if she wants them, and only when the core weekly loop has earned its place.
+**Google Workspace (calendar and email)** is included as an optional connection — see the section above. The core weekly loop still works with nothing connected; the calendar and email skills simply add capability for her if she chooses to authenticate.
+
+**Deliberately deferred to a later phase:** a connection to a college Learning Management System (the school's online course platform, such as Canvas or Moodle). These depend on fragile, school-controlled access rules, so that integration comes only later, only if she wants it, and only when the core loop has earned its place.
 
 ## Assumptions to verify with her before the real pilot
 
