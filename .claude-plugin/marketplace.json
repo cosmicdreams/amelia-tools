@@ -5,18 +5,18 @@
     "url": "https://github.com/cosmicdreams"
   },
   "metadata": {
-    "description": "A private collection of personal Claude Code plugins. The first is amelia-student, a study assistant a college student owns and controls.",
-    "version": "0.2.0"
+    "description": "A private collection of personal Claude Code plugins. The first is the college plugin, a study assistant a student owns and controls.",
+    "version": "0.3.0"
   },
   "plugins": [
     {
-      "name": "amelia-student",
+      "name": "college",
       "description": "A study assistant a college student owns: a fast weekly planning loop, a coaching mode that helps her understand her coursework instead of producing work she would submit, and read-and-write access to her Google Calendar and Gmail with confirmation before any change.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "source": {
         "source": "github",
         "repo": "cosmicdreams/amelia-tools",
-        "path": "./plugins/amelia-student"
+        "path": "./plugins/college"
       }
     }
   ]
