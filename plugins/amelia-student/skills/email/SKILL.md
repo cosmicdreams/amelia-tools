@@ -1,8 +1,8 @@
 ---
 name: email
 description: >
-  Read and manage Amelia's Gmail through the Google Workspace command-line tool (the
-  command named gws). Use when she asks to check her email, read a message, find
+  Read and manage Amelia's Gmail through the Google Workspace command-line tool, whose
+  command is `gws`. Use when she asks to check her email, read a message, find
   messages from someone, see her unread mail, draft a reply, or send a message.
   Trigger phrases: "check my email", "any new emails", "do I have mail from my
   professor", "read this message", "show me my inbox", "unread emails", "reply to

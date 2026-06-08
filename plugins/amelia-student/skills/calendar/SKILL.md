@@ -2,14 +2,15 @@
 name: calendar
 description: >
   Read and manage Amelia's Google Calendar through the Google Workspace command-line
-  tool (the command named gws). Use when she asks what is on her calendar, about
+  tool, whose command is `gws`. Use when she asks what is on her calendar, about
   upcoming events or classes, her schedule, whether she is free at a time, or wants
   to add or block time. Trigger phrases: "what's on my calendar", "what do I have
   today", "am I free", "check my availability", "do I have any conflicts", "when is
-  my next class", "what's my week look like on the calendar", "add this to my
+  my next class", "what's on my calendar this week", "add this to my
   calendar", "block study time", "schedule this". Do not trigger for mail tasks —
-  use the email skill for those. Do not trigger for ranking coursework or planning
-  what to work on — use week-look for that.
+  use the email skill for those. Do not trigger for ranking coursework or deciding
+  what to work on — including "what does my week look like" asked as a planning
+  question — use the week-look skill for that.
 ---
 
 # Calendar
