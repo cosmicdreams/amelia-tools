@@ -22,7 +22,7 @@ if [[ "$TOOL" != "gws" ]]; then
   exit 1
 fi
 
-CACHE_DIR="${HOME}/.claude/plugins/data/amelia-student"
+CACHE_DIR="${HOME}/.claude/plugins/data/college"
 CACHE_FILE="${CACHE_DIR}/integration-cache.json"
 TIME_TO_LIVE_SECONDS=300  # five minutes
 
@@ -67,7 +67,7 @@ _check_gws() {
     return 1
   fi
   local out
-  if ! out=$(gws calendar list-calendars --max-results 1 2>&1); then
+  if ! out=$(gws calendar events list --params '{"calendarId":"primary","maxResults":1}' 2>&1); then
     echo "gws authentication failed: ${out}"
     return 1
   fi
@@ -90,6 +90,7 @@ if reason=$(_check_gws); then
   _cache_write "healthy" ""
   exit 0
 else
+  reason=${reason%%$'\n'*}   # keep only the first line; a failing gws call can print many lines
   _cache_write "failed" "$reason"
   print -u2 "integration gws unavailable: ${reason}"
   exit 1
